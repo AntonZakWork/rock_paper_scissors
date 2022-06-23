@@ -1,0 +1,90 @@
+.gameContainer{
+    min-width: 570px;
+    min-height: 220px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 115px;
+    .background_svg{
+        min-width: 315px;
+        min-height: 290px;
+    } 
+    }
+.rock, .paper, .scissors {
+        position: absolute;
+    }
+ .rock{
+        top: 30px;
+        left: 25px;
+        .outerCircle{
+            background-color: hsla(349, 71%, 52%, 0.8);
+            &::before{
+                background-color: rgb(221, 64, 93);
+            }
+            }
+        }
+    .paper {
+        top: 30px;
+       right: 25px;
+        .outerCircle{
+            background-color: hsla(230, 89%, 62%, 0.8);
+            &::before{
+                background-color: hsl(230, 89%, 65%);
+            }
+            }
+    }
+    .scissors{
+        bottom: 0px;
+        left:50%;
+        transform: translateY(50%) translateX(-50%);
+        .outerCircle{
+            background-color: hsla(39, 89%, 49%, 0.8);
+            &::before{
+                background-color: hsl(40, 84%, 53%);
+            }
+            }
+    }
+    .outerCircle {
+        cursor: pointer;
+        border-radius: 50%;
+        width:180px;
+        height: 180px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        z-index: -1;
+        &::before{
+            content: '';
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            width:100%;
+            position: absolute;
+            transform: translateY(-4%);
+            z-index:0;
+    }
+}
+.innerCircle{
+        transform: translateY(-4%);
+        border-radius: 50%;
+        width: 130px;
+        height: 130px;
+        background-color: #d4d4d4;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        z-index:2;
+        svg{
+            z-index: 3;
+        }
+        &::after{
+            content: "";
+            border-radius: 50%;
+            z-index: 1;
+            position: absolute;
+            aspect-ratio: 1/1;
+            width: 100%;
+            transform: translateY(4%);
+            background-color: #ffffff;
+        }
+    }
