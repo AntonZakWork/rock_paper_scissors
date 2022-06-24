@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import './Header.scss';
 const Header = () => {
   const { score } = useSelector((state) => state.game);
+  const [delayedScore, setDelayedScore] = useState(score);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setDelayedScore(score), 1000);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [score]);
   return (
     <>
       <div className="headerContainer">
@@ -45,7 +53,7 @@ const Header = () => {
         </div>
         <div className="score">
           <div className="title">S C O R E</div>
-          <div className="result">{score}</div>
+          <div className="scoreCount">{delayedScore}</div>
         </div>
       </div>
     </>

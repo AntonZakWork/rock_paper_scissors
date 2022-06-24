@@ -6,6 +6,8 @@ const initialState = {
   computerChoice: null,
   result: null,
   score: 0,
+  pause: true,
+  rulesOpen: false,
 };
 export const GameSlice = createSlice({
   name: 'game',
@@ -37,13 +39,20 @@ export const GameSlice = createSlice({
         state.score += 1;
       }
     },
+    changePause(state) {
+      state.pause = false;
+    },
+    toggleRules(state) {
+      state.rulesOpen = !state.rulesOpen;
+    },
     reset(state) {
       state.playerChoice = null;
       state.computerChoice = null;
       state.result = null;
+      state.pause = true;
     },
   },
 });
 
-export const { getChoice, reset } = GameSlice.actions;
+export const { getChoice, reset, changePause, toggleRules } = GameSlice.actions;
 export default GameSlice.reducer;

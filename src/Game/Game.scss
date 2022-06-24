@@ -13,6 +13,10 @@
     }
 .rock, .paper, .scissors {
         position: absolute;
+        .innerCircle:hover{
+            svg{animation: iconHover 0.6s ease-in-out infinite alternate}
+            
+        }
     }
  .rock{
         top: 30px;
@@ -23,7 +27,15 @@
                 background-color: rgb(221, 64, 93);
             }
             }
+            
         }
+    @keyframes iconHover {
+        100%{
+            transform: translateY(-12%);
+        }
+     
+        
+    }
     .paper {
         top: 30px;
        right: 25px;
@@ -62,6 +74,14 @@
             position: absolute;
             transform: translateY(-4%);
             z-index:0;
+    }
+
+}
+@keyframes pulse {
+
+    100% {
+        transform: scale(1.75);
+        opacity:0
     }
 }
 .innerCircle{

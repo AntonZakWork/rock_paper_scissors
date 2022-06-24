@@ -18,14 +18,50 @@
     align-items: center;
     margin: 0 3vw;
     text-align: center;
+    z-index: 1;
+    animation: appear 0.5s cubic-bezier(0, 1.17, 0.4, 2.65) forwards 0.45s;
    div{
+    margin-top: 30px;
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
     font-weight: 900;
     color: white;
    }
+   button{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    margin-top: 30px;
+    min-width: 127px;
+    height: 50px;
+    width: 150px;
+    border:none;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #192643;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 9px;
+    text-align: center;
+    &:hover{
+        box-shadow: 0 0 7px white;
+        color:hsl(229, 64%, 46%);
+        transition: color 0.5s;
+    }
+   }
 }
-
+@keyframes appear {
+    0%{
+        transform: scale(0);
+    }
+    75% {
+        transform: scale (200%);
+    }
+    100%{
+        transform: scale(100%)
+    }
+    
+}
 .player, .computer{
     display: flex;
     flex-direction: column;
@@ -37,4 +73,47 @@
     font-weight: 700;
     font-size: 18px;
     letter-spacing: 3px;
+}
+
+.player {
+    &.winner{    
+    .outerCircle{ 
+        &::after{
+        background-color: #28456c;
+        border-radius: 100%;
+        width:100%;
+        bottom: 4%;
+        height:100%;
+        content: "";
+        position: absolute;
+        z-index: -1;
+        animation: pulse 1.5s ease-out infinite;}
+   
+}
+svg{
+    animation: iconHover 0.6s ease-in-out infinite alternate
+}
+}}
+
+.computer { 
+    &.winner{
+        .outerCircle{ 
+        &::after{
+        background-color: #28456c;
+        border-radius: 100%;
+        width:100%;
+        bottom: 4%;
+        height:100%;
+        content: "";
+        position: absolute;
+        z-index: -1;
+        animation: pulse 1.5s ease-out infinite;
+    }
+   
+}
+svg{
+    animation: iconHover 0.6s ease-in-out infinite alternate
+}
+}   
+    
 }

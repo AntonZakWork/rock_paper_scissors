@@ -1,0 +1,11 @@
+.ResultLoader{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: hsl(214, 47%, 23%);
+    animation: resultAppear 0.5s linear
+}
+@keyframes resultAppear {
+    0%{transform: scale(0%);}
+    100%{transform: scale(100%)}
+}

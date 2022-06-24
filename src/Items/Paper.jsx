@@ -1,13 +1,19 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import '../Game/Game.scss';
 import { paper } from '../Store/Actions';
-import { getChoice } from '../Store/GameSlice';
+import { getChoice, reset } from '../Store/GameSlice';
 const Paper = () => {
+  const { result } = useSelector((state) => state.game);
   const dispatch = useDispatch();
   return (
     <>
-      <div className="paper" onClick={() => dispatch(getChoice(paper))}>
+      <div
+        className="paper"
+        onClick={() => {
+          if (!result) dispatch(getChoice(paper));
+          else dispatch(reset());
+        }}>
         <div className="outerCircle">
           <div className="innerCircle">
             <svg xmlns="http://www.w3.org/2000/svg" width="49" height="59">
