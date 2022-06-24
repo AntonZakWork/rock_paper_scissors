@@ -8,7 +8,7 @@ const initialState = {
   score: +localStorage.getItem('score') || 0,
   pause: true,
   rulesOpen: false,
-  bonusMode: Boolean(localStorage.getItem('bonusMode')) || false,
+  bonusMode: localStorage.getItem('bonusMode') === 'true' || false,
   gameChoises: [paper, scissors, rock],
   bonusModeChoises: [spock, scissors, paper, rock, lizard],
   isScoreFromStorage: true,
@@ -100,7 +100,7 @@ export const GameSlice = createSlice({
       state.pause = true;
     },
     toggleBonusMode(state) {
-      localStorage.removeItem('score');
+      localStorage.clear();
       state.bonusMode = !state.bonusMode;
       state.score = 0;
     },
