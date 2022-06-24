@@ -18,13 +18,13 @@
             justify-content: space-between;
             .headerText{
                 color: #3b4363;
-                margin: 35px 0;
+                margin: 20px 0;
                 align-self: flex-start;
                 font-size: 25px;
                 font-weight: 700;
             }
             .closeIcon{
-                margin-top: 40px;
+                margin-top: 32px;
                 svg{
                     
                     cursor: pointer;
@@ -40,5 +40,8 @@
             }
         }
         
+    }
+    .bonusRules{
+        margin-top: -15px;
     }
 }

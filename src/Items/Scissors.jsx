@@ -3,17 +3,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import '../Game/Game.scss';
 
 import { scissors } from '../Store/Actions';
-import { getChoice, reset } from '../Store/GameSlice';
+import { getChoice, getChoiceBonusGame, reset } from '../Store/GameSlice';
 const Scissors = () => {
-  const { result } = useSelector((state) => state.game);
+  const { result, bonusMode } = useSelector((state) => state.game);
   const dispatch = useDispatch();
   return (
     <>
       <div
         className="scissors"
         onClick={() => {
-          if (!result) dispatch(getChoice(scissors));
-          else dispatch(reset());
+          if (!result) {
+            bonusMode ? dispatch(getChoiceBonusGame(scissors)) : dispatch(getChoice(scissors));
+          } else dispatch(reset());
         }}>
         <div className="outerCircle">
           <div className="innerCircle">

@@ -1,16 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+
 import './Header.scss';
 const Header = () => {
-  const { score } = useSelector((state) => state.game);
+  const { score, bonusMode, isScoreFromStorage } = useSelector((state) => state.game);
   const [delayedScore, setDelayedScore] = useState(score);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setDelayedScore(score), 1000);
+    setDelayedScore(0);
+  }, [bonusMode]);
+
+  useEffect(() => {
+    let delay = 1000;
+    if (isScoreFromStorage) {
+      delay = 0;
+    }
+    const timeout = setTimeout(() => setDelayedScore(score), delay);
+
     return () => {
       clearTimeout(timeout);
     };
   }, [score]);
+
   return (
     <>
       <div className="headerContainer">

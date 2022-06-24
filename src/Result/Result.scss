@@ -2,17 +2,23 @@
     width: 80%;
     height: 60%;
     display: grid;
-    grid-template-columns: 1fr minmax(0px, 1fr) 1fr;
-    .rock, .paper, .scissors {
+    grid-template-columns: 1fr auto 1fr;
+    
+    .rock, .paper, .scissors, .spock, .lizard {
         position: relative;
         top: 0;
         left: 0;
         right:0;
-        transform: translateX(0) translateY(0);
+        transform: scale(150%);
+    }
+    &.played{
+        grid-template-columns: 1fr auto 1fr;
+        transition: all 10s;
     }
 }
+
 .result{
-    min-width:0;
+    min-width:0px;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -20,12 +26,15 @@
     text-align: center;
     z-index: 1;
     animation: appear 0.5s cubic-bezier(0, 1.17, 0.4, 2.65) forwards 0.45s;
+   
    div{
     margin-top: 30px;
     text-align: center;
     font-size: 50px;
     font-weight: 900;
     color: white;
+    transition: width 1s;
+    
    }
    button{
     font-family: 'Barlow Semi Condensed', sans-serif;
@@ -50,6 +59,7 @@
     }
    }
 }
+
 @keyframes appear {
     0%{
         transform: scale(0);
@@ -69,6 +79,7 @@
     align-items: center;
 }
 .resultHeader{
+    z-index: 1;
     color: white;
     font-weight: 700;
     font-size: 18px;

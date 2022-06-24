@@ -1,6 +1,12 @@
+@font-face {
+    font-family: 'Barlow Semi Condensed';
+    src: local('Inconsolata'), url(./Fonts/BarlowSemiCondensed/BarlowSemiCondensed-Black.ttf) format('truetype');
+  }
+
+
 body {
   margin: 0;
-  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-family: 'Barlow Semi Condensed';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -1,0 +1,28 @@
+.bonusGame{
+    .gameContainer{
+        margin-top: -20px;
+        .scissors, .lizard, .rock, .paper,.spock {
+            transform: scale(70%) 
+        }
+        .scissors{
+            top: 20px;
+            right: 195px;
+        }
+        .rock {
+            top: 354px;
+            left: 308px;
+        }
+        .paper {
+            top: 152px;
+            left: 363px;
+        }
+        .lizard {
+            top: 354px;
+            left: 84px;
+        }
+        .spock{
+            top: 135px;
+            left: 28px;
+         }
+    }
+}

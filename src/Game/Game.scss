@@ -1,3 +1,8 @@
+@keyframes iconHover {
+    100%{
+        transform: translateY(-12%);
+    }   
+}
 .gameContainer{
     min-width: 570px;
     min-height: 220px;
@@ -11,7 +16,7 @@
         min-height: 290px;
     } 
     }
-.rock, .paper, .scissors {
+.rock, .paper, .scissors, .lizard, .spock {
         position: absolute;
         .innerCircle:hover{
             svg{animation: iconHover 0.6s ease-in-out infinite alternate}
@@ -19,8 +24,10 @@
         }
     }
  .rock{
-        top: 30px;
-        left: 25px;
+    bottom: 0px;
+        left:50%;
+        transform: translateY(50%) translateX(-50%);
+        
         .outerCircle{
             background-color: hsla(349, 71%, 52%, 0.8);
             &::before{
@@ -29,16 +36,10 @@
             }
             
         }
-    @keyframes iconHover {
-        100%{
-            transform: translateY(-12%);
-        }
-     
-        
-    }
     .paper {
-        top: 30px;
-       right: 25px;
+        
+       top: 30px;
+       left: 25px;
         .outerCircle{
             background-color: hsla(230, 89%, 62%, 0.8);
             &::before{
@@ -47,13 +48,34 @@
             }
     }
     .scissors{
-        bottom: 0px;
-        left:50%;
-        transform: translateY(50%) translateX(-50%);
+        top: 30px;
+        right: 25px;
         .outerCircle{
             background-color: hsla(39, 89%, 49%, 0.8);
             &::before{
                 background-color: hsl(40, 84%, 53%);
+            }
+            }
+    }
+    .lizard{
+        bottom: 0px;
+        left:50%;
+        transform: translateY(50%) translateX(-50%);
+        .outerCircle{
+            background-color: hsl(261, 73%, 50%);
+            &::before{
+                background-color: hsl(261, 72%, 63%);
+            }
+            }
+    }
+    .spock{
+        bottom: 0px;
+        left:50%;
+        transform: translateY(50%) translateX(-50%);
+        .outerCircle{
+            background-color:  hsl(189, 56%, 38%);
+            &::before{
+                background-color: hsl(189, 58%, 57%);
             }
             }
     }

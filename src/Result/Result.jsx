@@ -1,17 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Lizard from '../Items/Lizzard';
 import Paper from '../Items/Paper';
 import Rock from '../Items/Rock';
 import Scissors from '../Items/Scissors';
+import Spock from '../Items/Spock';
 import ResultLoader from '../ResultLoader/ResultLoader';
-import { lose, paper, rock, scissors, win } from '../Store/Actions';
+import { lizard, lose, paper, rock, scissors, spock, win } from '../Store/Actions';
 import { changePause, reset } from '../Store/GameSlice';
 import './Result.scss';
 const Result = () => {
   const { playerChoice, computerChoice, result, pause } = useSelector((state) => state.game);
   const dispatch = useDispatch();
+  const [played, setPlayed] = useState(false);
   const showResults = () => {
     dispatch(changePause());
+    setPlayed(true);
   };
   useEffect(() => {
     const timeout = setTimeout(showResults, 500);
@@ -29,10 +33,12 @@ const Result = () => {
             {playerChoice === scissors && <Scissors />}
             {playerChoice === rock && <Rock />}
             {playerChoice === paper && <Paper />}
+            {playerChoice === lizard && <Lizard />}
+            {playerChoice === spock && <Spock />}
           </div>
         </div>
         <div className="result">
-          {result && !pause && (
+          {played && (
             <div>
               <div>{result}</div>
               <button onClick={() => dispatch(reset())}>Play again</button>
@@ -48,6 +54,8 @@ const Result = () => {
               {computerChoice === scissors && <Scissors />}
               {computerChoice === rock && <Rock />}
               {computerChoice === paper && <Paper />}
+              {computerChoice === lizard && <Lizard />}
+              {computerChoice === spock && <Spock />}
             </div>
           )}
         </div>
