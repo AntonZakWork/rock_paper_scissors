@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/rock_paper_scissors/static/css/main.95e6551c.css",
+    "main.css": "/rock_paper_scissors/static/css/main.1d4c946b.css",
     "main.js": "/rock_paper_scissors/static/js/main.ab4a86de.js",
     "static/media/BarlowSemiCondensed-Black.ttf": "/rock_paper_scissors/static/media/BarlowSemiCondensed-Black.391abe5e29fbd7603c88.ttf",
     "index.html": "/rock_paper_scissors/index.html",
-    "main.95e6551c.css.map": "/rock_paper_scissors/static/css/main.95e6551c.css.map",
+    "main.1d4c946b.css.map": "/rock_paper_scissors/static/css/main.1d4c946b.css.map",
     "main.ab4a86de.js.map": "/rock_paper_scissors/static/js/main.ab4a86de.js.map"
   },
   "entrypoints": [
-    "static/css/main.95e6551c.css",
+    "static/css/main.1d4c946b.css",
     "static/js/main.ab4a86de.js"
   ]
 }
